@@ -7,7 +7,7 @@
 @syntax-text-color: @base01;
 @syntax-cursor-color: @green;
 @syntax-selection-color: @base02;
-@syntax-selection-flash-color: @base1;
+@syntax-selection-flash-color: @base00;
 @syntax-background-color: @base03;
 
 // Guide colors
@@ -17,12 +17,12 @@
 
 // For find and replace markers
 @syntax-result-marker-color: @cyan;
-@syntax-result-marker-color-selected: @base3;
+@syntax-result-marker-color-selected: @base03;
 
 // Gutter colors
-@syntax-gutter-text-color: @base0;
+@syntax-gutter-text-color: @base01;
 @syntax-gutter-text-color-selected: @syntax-gutter-text-color;
-@syntax-gutter-background-color: @base02;
+@syntax-gutter-background-color: darken(@base02, 3%);
 @syntax-gutter-background-color-selected: @base02;
 
 // For git diff info. i.e. in the gutter
@@ -49,6 +49,6 @@
 // Custom variables
 // Warning: Don't use in packages
 
-@syntax-comment-color: @base01;
-@syntax-subtle-color: @base00;
-@syntax-emphasized-color: @base1;
+@syntax-comment-color: @base00;
+@syntax-subtle-color: lighten(@base00, 3%);
+@syntax-emphasized-color: @base0;
