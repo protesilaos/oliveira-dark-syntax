@@ -4,10 +4,10 @@
 // include a syntax-variables.less file.
 
 // General colors
-@syntax-text-color: @base01;
+@syntax-text-color: @base0;
 @syntax-cursor-color: @green;
 @syntax-selection-color: @base02;
-@syntax-selection-flash-color: @base00;
+@syntax-selection-flash-color: @base1;
 @syntax-background-color: @base03;
 
 // Guide colors
@@ -16,12 +16,12 @@
 @syntax-invisible-character-color: @base02;
 
 // For find and replace markers
-@syntax-result-marker-color: @cyan;
-@syntax-result-marker-color-selected: @base03;
+@syntax-result-marker-color: @base1;
+@syntax-result-marker-color-selected: @base02;
 
 // Gutter colors
-@syntax-gutter-text-color: @base01;
-@syntax-gutter-text-color-selected: @syntax-gutter-text-color;
+@syntax-gutter-text-color: @base0;
+@syntax-gutter-text-color-selected: @base1;
 @syntax-gutter-background-color: darken(@base02, 3%);
 @syntax-gutter-background-color-selected: @base02;
 
@@ -45,10 +45,9 @@
 @syntax-color-import: @red;
 @syntax-color-snippet: @syntax-color-keyword;
 
-
 // Custom variables
 // Warning: Don't use in packages
 
-@syntax-comment-color: @base00;
-@syntax-subtle-color: lighten(@base00, 3%);
-@syntax-emphasized-color: @base0;
+@syntax-comment-color: @base1;
+@syntax-subtle-color: darken(@base1, 3%);
+@syntax-emphasized-color: lighten(@base0, 3%);
