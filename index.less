@@ -1,10 +1,350 @@
-@import "colors";
-@import "syntax-variables";
+@import 'syntax-variables';
 
-// Editor
-@import "editor";
+.markup {
 
-// Languages
-@import "languages/_base";
-@import "languages/markdown";
-@import "languages/markup";
+  &.bold {
+    font-weight: bold;
+  }
+  &.italic {
+    font-style: italic;
+  }
+  &.link {
+    color: @cya;
+  }
+}
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+  }
+  .gutter .cursor-line {
+    background-color: @syntax-gutter-background-color-selected;
+  }
+  .line-number.cursor-line-no-selection {
+    background-color: @syntax-gutter-background-color-selected;
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @vio;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    border-color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  // Markdown Styles
+
+  .source.gfm {
+    color: @dt1;
+  }
+
+  .gfm {
+    .markup.heading {
+      color: @gre;
+    }
+
+    .link {
+      color: @vio;
+    }
+
+    .variable.list,
+    .support.quote {
+      color: @dt2;
+    }
+
+    .link .entity {
+      color: @blu;
+    }
+
+    .raw {
+      color: @dt1;
+    }
+  }
+
+  .markdown {
+    .paragraph {
+      color: @dt1;
+    }
+
+    .heading {
+      color: @gre;
+    }
+
+    .raw {
+      color: @dt1;
+    }
+
+    .link {
+      color: @blu;
+
+      .string {
+        color: @dt2;
+
+        &.title {
+          color: @dt1;
+        }
+      }
+    }
+  }
+}
+
+
+
+.bracket-matcher .region {
+  border-bottom: 1px solid @yel;
+  margin-top: -1px;
+  opacity: .7;
+}
+
+.comment {
+  color: @dt2;
+}
+
+.entity {
+  color: @mag;
+
+  &.name.type {
+    color: @dt1;
+  }
+
+  &.other.inherited-class {
+    color: @ora;
+  }
+}
+
+.keyword {
+  color: @blu;
+
+  &.control {
+    color: @blu;
+  }
+
+  &.operator {
+    color: @dt1;
+  }
+}
+
+.storage {
+  color: @lhl;
+
+  &.modifier {
+    color: @blu;
+  }
+}
+
+.constant {
+  color: @gre;
+
+  &.numeric {
+    color: @mag;
+  }
+}
+
+.variable {
+  color: @vio;
+}
+
+.invalid.deprecated {
+  text-decoration: underline;
+  color: @mag;
+}
+
+.invalid.illegal {
+  color: @lbg;
+  background-color: @mag;
+}
+
+// String interpolation in Ruby, CoffeeScript, and others
+.string {
+  .source,
+  .meta.embedded.line {
+    color: @dt1;
+  }
+
+  .punctuation.section.embedded {
+    color: @cya;
+
+    .source {
+      color: @cya;
+    }
+  }
+}
+
+.string {
+  color: @dt1;
+
+  .constant {
+    color: @cya;
+  }
+
+  &.regexp {
+    color: @yel;
+
+    .constant.character.escape,
+    .source.ruby.embedded,
+    .string.regexp.arbitrary-repetition {
+      color: @ora;
+    }
+
+    &.group {
+      color: @yel;
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    &.character-class {
+      color: @yel;
+    }
+  }
+
+  .variable {
+    color: @dt1;
+  }
+}
+
+.support {
+  color: @dt1;
+
+  &.function {
+    color: @ora;
+  }
+
+  &.constant {
+    color: @mag;
+  }
+
+  &.type.property-name.css {
+    color: @dt1;
+  }
+}
+
+.source .entity.name.tag,
+.source .punctuation.tag {
+  color: @blu;
+}
+.source .entity.other.attribute-name {
+  color: @gre;
+}
+
+.entity {
+  &.other.attribute-name {
+    color: @vio;
+  }
+
+  &.name.tag.namespace,
+  &.other.attribute-name.namespace {
+    color: @ora;
+  }
+}
+
+.meta {
+  &.preprocessor.c {
+    color: @dt1;
+  }
+
+  &.preprocessor.c .keyword {
+    color: @vio;
+  }
+
+  &.cast {
+    color: @dt2;
+  }
+
+  &.sgml.html .meta.doctype,
+  &.sgml.html .meta.doctype .entity,
+  &.sgml.html .meta.doctype .string,
+  &.xml-processing,
+  &.xml-processing .entity,
+  &.xml-processing .string {
+    color: @dt2;
+  }
+
+  &.tag .entity,
+  &.tag > .punctuation,
+  &.tag.inline .entity {
+    color: @vio;
+  }
+  &.tag .name,
+  &.tag.inline .name,
+  &.tag > .punctuation {
+    color: @gre;
+  }
+
+  &.selector.css .entity.name.tag {
+    color: @blu;
+  }
+
+  &.selector.css .entity.other.attribute-name.tag.pseudo-class {
+    color: @dt1;
+  }
+
+  &.selector.css .entity.other.attribute-name.id {
+    color: @gre;
+  }
+
+  &.selector.css .entity.other.attribute-name.class {
+    color: @cya;
+  }
+
+  &.property-group .support.constant.property-value.css,
+  &.property-value .support.constant.property-value.css {
+    color: @dt1;
+  }
+
+  &.preprocessor.at-rule .keyword.control.at-rule {
+    color: @dt1;
+  }
+
+  &.property-value .support.constant.named-color.css,
+  &.property-value .constant {
+    color: @vio;
+  }
+
+  &.constructor.argument.css {
+    color: @dt1;
+  }
+
+  &.diff,
+  &.diff.header {
+    color: @lbg;
+    background-color: @dhl;
+  }
+
+  &.separator {
+    color: @gre;
+    background-color: @dhl;
+  }
+
+  &.line.entry.logfile,
+  &.line.exit.logfile {
+    background-color: @lhl;
+  }
+
+  &.line.error.logfile {
+    background-color: @red;
+  }
+}
