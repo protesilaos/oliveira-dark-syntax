@@ -1,0 +1,100 @@
+.source.gfm {
+
+  -webkit-font-smoothing: auto;
+
+  // General thingies
+  .markup {
+    // Typo
+    &.italic {
+      font-style: italic;
+      color: @dt1;
+    }
+    &.bold {
+      font-weight: bold;
+      color: @dt1;
+    }
+
+    // Headings
+    &.heading {
+      color: @dt1;
+      font-weight: bold;
+      &.space, &.marker {
+        font-weight: normal;
+      }
+      &.marker {
+        color: @blu;
+      }
+    }
+  }
+
+  // Rules
+  .hr {
+    font-weight: bold;
+    color: @dt2;
+  }
+
+  // Lists, etc.
+  .list {
+    color: @cya;
+  }
+
+  // Quotes
+  .quote {
+    color: @dt2;
+    &.support {
+      font-weight: bold;
+      color: @cya;
+    }
+  }
+
+  // References and mentions
+  .mention {
+    color: @dt2;
+  }
+  .username {
+    color: @blu;
+  }
+
+  // Raw code
+  .raw {
+    color: @dt2;
+    border-radius: 3px;
+  }
+
+  // Links
+  .link {
+    color: @cya;
+
+    .entity {
+      color: @vio;
+    }
+    .underline {
+      text-decoration: none;
+    }
+    .punctuation {
+      color: @dt2;
+      text-decoration: none !important;
+    }
+  }
+
+  // Tables
+  .table.gfm {
+    .border {
+      color: @dt2;
+      font-weight: bold;
+      &.outer {
+        color: @dt2;
+      }
+      &.header {
+        color: @dt2;
+      }
+    }
+    .alignment {
+      color: @dt2;
+    }
+  }
+
+}
+
+// Syntax for critic markup
+@import "criticmark.less";
