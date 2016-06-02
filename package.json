@@ -6,10 +6,10 @@
   "keywords": [
     "syntax",
     "theme",
-    "low-contrast",
-    "base16",
     "dark",
-    "green"
+    "green",
+    "violet",
+    "blue"
   ],
   "repository": {
     "type": "git",
